@@ -41,7 +41,7 @@ function OrderlistScreen() {
           type: "FETCH_SUCCESS",
           payload: data,
         });
-        console.log(data);
+        // console.log(data);
       } catch (err) {
         dispatch({
           type: "FETCH_FAIL",
@@ -81,7 +81,7 @@ function OrderlistScreen() {
                 <tr key={order._id}>
                   <td>{order._id}</td>
                   <td>Aman</td>
-                  <td>{order.createdAt.substring(0, 10)}</td>
+                  <td>{order.createdAt?.substring(0, 10)}</td>
                   <td>{order.totalPrice}</td>
                   <td>{order.isPaid ? order.isPaid.substring(0, 10) : "NO"}</td>
                   <td>

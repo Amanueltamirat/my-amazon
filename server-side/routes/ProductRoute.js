@@ -1,11 +1,15 @@
 import express, { query } from "express";
 import Product from "../models/ProductModel.js";
 import expressAsyncHandler from "express-async-handler";
-const ProductRouter = express.Router();
-ProductRouter.get("/", async (req, res) => {
-  const products = await Product.find({});
+import data from '../data.js'
+const ProductRouter = express.Router()
+
+ProductRouter.get("/", expressAsyncHandler( async (req, res) => {
+await Product.deleteMany({});
+const CreatedProducts = await Product.insertMany(data.products)
+const products = await Product.find({});
   res.send(products);
-});
+}));
 const PAGE_SIZE = 3;
 ProductRouter.get(
   "/search",

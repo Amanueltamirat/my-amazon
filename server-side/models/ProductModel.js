@@ -6,7 +6,7 @@ const ProductSchema = new Schema(
     name: {
       type: String,
       // required: [true, "Title required"],
-      unique: true,
+      // unique: true,
     },
     slug: {
       type: String,

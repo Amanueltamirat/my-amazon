@@ -4,21 +4,8 @@
 // import p4 from "./images/p4.jpg";
 import bcrypt from "bcryptjs";
 const data = {
-  users: [
-    {
-      name: "Amanuel",
-      email: "admin@example.com",
-      password: bcrypt.hashSync("123456"),
-      isAdmin: true,
-    },
-    {
-      name: "John",
-      email: "user@test.com",
-      password: bcrypt.hashSync("23456"),
-      isAdmin: false,
-    },
-  ],
-  products: [
+
+ products: [
     {
       // _id: "1",
       name: "Nike slim shirt",
@@ -71,6 +58,21 @@ const data = {
       rating: 5,
       numReviews: 10,
       description: "high quality shirt",
+    },
+  ],
+
+  users: [
+    {
+      name: "Amanuel",
+      email: "admin@example.com",
+      password: bcrypt.hashSync("123456"),
+      isAdmin: true,
+    },
+    {
+      name: "John",
+      email: "user@test.com",
+      password: bcrypt.hashSync("23456"),
+      isAdmin: false,
     },
   ],
 };

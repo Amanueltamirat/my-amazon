@@ -9,7 +9,7 @@ OrderRouter.get(
   "/orderlist",
   expressAsyncHandler(async (req, res) => {
     const orderlist = await Order.find();
-    console.log(orderlist);
+   
     res.send(orderlist);
   })
 );
@@ -18,8 +18,8 @@ OrderRouter.post(
   "/",
   isAuth,
   expressAsyncHandler(async (req, res) => {
-    Order.collection.updateMany();
-    Order.collection.insertOne();
+    // Order.collection.updateMany();
+    // Order.collection.insertOne();
     const newOrder = new Order({
       orderItems: req.body.orderItems.map((x) => ({ ...x, product: x._id })),
       shippingAddress: req.body.shippingAddress,
@@ -29,9 +29,9 @@ OrderRouter.post(
       taxPrice: req.body.taxPrice,
       totalPrice: req.body.totalPrice,
       user: req.user._id,
-      users: req.user.name,
+      // users: req.user.name,
     });
-    newOrder.collection.insertOne({ users: req.user.name });
+    // newOrder.collection.insertOne({ users: req.user.name });
 
     const order = await newOrder.save();
     res.status(201).send({ message: "New Order Created", order });

@@ -3,12 +3,19 @@ import expressAsyncHandler from "express-async-handler";
 import bycrpt from "bcryptjs";
 import User from "../models/UserModel.js";
 import { generateToken, isAuth } from "../utils.js";
+import data from '../data.js'
 const UserRoute = express.Router();
+
+
+
 UserRoute.get(
   "/userslist",
   expressAsyncHandler(async (req, res) => {
-    const userslist = await User.find();
-    res.send(userslist);
+    await User.deleteMany({});
+    const CreatedUsers = await User.insertMany(data.users);
+    const userslist = await User.find({});
+    // res.send(CreatedUsers);
+    res.send(userslist)
   })
 );
 

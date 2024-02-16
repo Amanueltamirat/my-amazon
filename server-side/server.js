@@ -10,10 +10,10 @@ import OrderRouter from "./routes/OrderRoute.js";
 import cors from "cors";
 dotenv.config();
 
-mongoose
+let db =   mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => console.log("connected to db"))
-  .catch((err) => console.log(err.message));
+  .catch((err) => console.log(err));
 
 const app = express();
 
@@ -24,11 +24,15 @@ app.use(cors());
 
 app.get("/api/keys/paypal", (req, res) => {
   res.send(process.env.PAYPAL_CLIENT_ID || "sb");
-});
+})
 app.use("/api/seed", SeedRouter);
 app.use("/api/products", ProductRouter);
 app.use("/api/users", UserRoute);
 app.use("/api/order", OrderRouter);
+
+// db.users.drop();
+
+
 
 const port = process.env.PORT || 3001;
 

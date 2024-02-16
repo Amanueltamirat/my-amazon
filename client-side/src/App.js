@@ -189,11 +189,18 @@ function App() {
               <Route
                 path="/order/:id"
                 element={
+                    <OrderDetailScreen />
+
+                }
+              />
+                 {/* <Route
+                path="/order/:id"
+                element={
                   <ProtectedRoute>
                     <OrderDetailScreen />
                   </ProtectedRoute>
                 }
-              />
+              /> */}
               <Route
                 path="/orderhistory"
                 element={

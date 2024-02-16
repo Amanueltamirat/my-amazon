@@ -176,12 +176,12 @@ function OrderDetailScreen() {
               <Card.Title>Shipping</Card.Title>
               <Card.Text>
                 <strong>Name:</strong>
-                {order.shippingAddress.fullName}
+                {order.shippingAddress?.fullName}
                 <br />
                 <strong>Adress:</strong>
-                {order.shippingAddress.address},{order.shippingAddress.city},
-                {order.shippingAddress.postalCode},
-                {order.shippingAddress.country}
+                {order.shippingAddress?.address},{order.shippingAddress?.city},
+                {order.shippingAddress?.postalCode},
+                {order.shippingAddress?.country}
               </Card.Text>
               {order.isDerlivered ? (
                 <MessageBox variant="success">
@@ -202,7 +202,8 @@ function OrderDetailScreen() {
               </Card.Text>
               {order.isPaid ? (
                 <MessageBox variant="success">
-                  Paid at {order.paidAt}
+                  Paid at {Date.now()}
+                  {/* {order.paidAt} */}
                 </MessageBox>
               ) : (
                 <MessageBox variant="danger">Not Paid</MessageBox>
@@ -273,11 +274,11 @@ function OrderDetailScreen() {
                       <LoadingBox />
                     ) : (
                       <div>
-                        <PayPalButtons
+                        {/* <PayPalButtons
                           createOrder={createOrder}
                           onApprove={onApprove}
                           onError={onError}
-                        ></PayPalButtons>
+                        ></PayPalButtons> */}
                       </div>
                     )}
                     {LoadingPay && <LoadingBox></LoadingBox>}
