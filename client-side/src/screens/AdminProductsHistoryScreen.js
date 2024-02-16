@@ -36,7 +36,9 @@ function AdminProductsHistoryScreen() {
     const fetchData = async () => {
       dispatch({ type: "FETCH_REQUEST" });
       try {
-        const { data } = await axios.get(`http://localhost:3001/api/products`);
+        const { data } = await axios.get(`https://mern-app.onrender.com/api/products`);
+        // http://localhost:3001/api/products
+        
         dispatch({ type: "FETCH_SUCCESS", payload: data });
       } catch (err) {
         dispatch({ type: "FETCH_FAIL" });

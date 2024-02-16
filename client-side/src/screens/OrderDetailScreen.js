@@ -84,7 +84,7 @@ function OrderDetailScreen() {
           type: "PAY_REQUEST",
         });
         const { data } = await axios.get(
-          `http://localhost:3001/api/order/${order._id}/pay`,
+          `https://mern-app.onrender.com/api/order/${order._id}/pay`,
           details,
           {
             headers: {
@@ -115,7 +115,7 @@ function OrderDetailScreen() {
       try {
         dispatch({ type: "FETCH_REQUEST" });
         const { data } = await axios.get(
-          `http://localhost:3001/api/order/${orderId}`,
+          `https://mern-app.onrender.com/api/order/${orderId}`,
           {
             headers: {
               authorization: `Bearer ${userInfo.token}`,
@@ -139,7 +139,7 @@ function OrderDetailScreen() {
     } else {
       const loadPayPalScript = async () => {
         const { data: clientId } = await axios.get(
-          `http://localhost:3001/api/keys/paypal`,
+          `https://mern-app.onrender.com/api/keys/paypal`,
           {
             headers: {
               authorization: `Bearer ${userInfo.token}`,

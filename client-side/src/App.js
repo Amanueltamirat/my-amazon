@@ -53,7 +53,7 @@ function App() {
     const fetchCategories = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:3001/api/products/categories`
+          `https://mern-app.onrender.com/api/products/categories`
         );
         setCategories(data);
         // console.log(data);

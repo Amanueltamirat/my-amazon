@@ -55,7 +55,7 @@ function ProductScreen() {
       });
       try {
         const result = await axios.get(
-          `http://localhost:3001/api/products/slug/${slug}`
+          `https://mern-app.onrender.com/api/products/slug/${slug}`
         );
         dispatch({
           type: "FETCH_SUCCESS",
@@ -77,7 +77,7 @@ function ProductScreen() {
     const existItem = cart.cartItems.find((x) => x._id === product._id);
     const quantity = existItem ? existItem.quantity + 1 : 1;
     const { data } = await axios.get(
-      `http://localhost:3001/api/products/${product._id}`
+      `https://mern-app.onrender.com/api/products/${product._id}`
     );
     console.log(data);
     if (data.countInStock < quantity) {

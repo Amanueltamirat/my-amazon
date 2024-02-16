@@ -35,7 +35,7 @@ function OrderlistScreen() {
       dispatch({ type: "FETCH_REQUEST" });
       try {
         const { data } = await axios.get(
-          `http://localhost:3001/api/order/orderlist`
+          `https://mern-app.onrender.com/api/order/orderlist`
         );
         dispatch({
           type: "FETCH_SUCCESS",

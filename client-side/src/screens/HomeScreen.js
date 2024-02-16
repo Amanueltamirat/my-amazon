@@ -45,7 +45,7 @@ function HomeScreen() {
         type: "FETCH_REQUEST",
       });
       try {
-        const result = await axios.get("http://localhost:3001/api/products");
+        const result = await axios.get("https://mern-app.onrender.com/api/products");
         dispatch({
           type: "FETCH_SUCCESS",
           payload: result.data,
