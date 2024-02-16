@@ -39,7 +39,7 @@ const port = process.env.PORT || 3001;
 const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, "/client-side/build")));
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "/client-side/build/index.html"));
+  res.sendFile(path.join(__dirname, 'client-side', 'build', 'index.html'));
 });
 //server error
 app.use((err, req, res, next) => {
