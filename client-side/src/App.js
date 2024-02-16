@@ -63,8 +63,7 @@ function App() {
     };
     fetchCategories();
   }, []);
-
-  return (
+ return (
     <BrowserRouter>
       <div
         className={
