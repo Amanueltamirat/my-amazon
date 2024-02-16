@@ -94,7 +94,7 @@ function SearchScreen() {
     const fetchData = async () => {
       try {
         const { data } = await axios.get(
-          `https://mern-app.onrender.com/api/products/search?page=${page}&query=${query}&category=${category}&price=${price}&rating=${rating}&order=${order}`
+          `https://my-amazon-14yi.onrender.com/api/products/search?page=${page}&query=${query}&category=${category}&price=${price}&rating=${rating}&order=${order}`
         );
         dispatch({
           type: "FETCH_SUCCESS",
@@ -116,7 +116,7 @@ function SearchScreen() {
     const fetchCategories = async () => {
       try {
         const { data } = await axios.get(
-          `https://mern-app.onrender.com/api/products/categories`
+          `https://my-amazon-14yi.onrender.com/api/products/categories`
         );
         setCategories(data);
         console.log(data);

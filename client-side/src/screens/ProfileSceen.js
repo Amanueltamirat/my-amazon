@@ -36,7 +36,7 @@ function ProfileSceen() {
     e.preventDefault();
     try {
       const { data } = await axios.put(
-        `https://mern-app.onrender.com/api/users/profile`,
+        `https://my-amazon-14yi.onrender.com/api/users/profile`,
         {
           name,
           email,

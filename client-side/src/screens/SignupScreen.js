@@ -28,7 +28,7 @@ function SignupScreen() {
     }
     try {
       const { data } = await axios.post(
-        "https://mern-app.onrender.com/api/users/signup",
+        "https://my-amazon-14yi.onrender.com/api/users/signup",
         { name, email, password }
       );
       ctxDispatch({ type: "USER_SIGNIN", payload: data });

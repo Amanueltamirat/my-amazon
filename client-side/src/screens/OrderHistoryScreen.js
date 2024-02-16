@@ -35,7 +35,7 @@ function OrderHistoryScreen() {
       dispatch({ type: "FETCH_REQUEST" });
       try {
         const { data } = await axios.get(
-          `https://mern-app.onrender.com/api/order/mine`,
+          `https://my-amazon-14yi.onrender.com/api/order/mine`,
           {
             headers: {
               authorization: `Bearer ${userInfo.token}`,

@@ -14,7 +14,8 @@ function Products({ product, index }) {
     const existItem = cartItems.find((x) => x._id === product._id);
     const quantity = existItem ? existItem.quantity + 1 : 1;
     const { data } = await axios.get(
-      `https://mern-app.onrender.com/api/products/${item._id}`
+      
+      `https://my-amazon-14yi.onrender.com/api/products/${item._id}`
       // `http://localhost:3001/api/products/${item._id}`
     );
     if (data.countInStock < quantity) {

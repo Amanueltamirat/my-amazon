@@ -30,7 +30,7 @@ function UserlistScreen() {
       dispatch({ type: "FETCH_REQUEST" });
       try {
         const { data } = await axios.get(
-          `https://mern-app.onrender.com/api/users/userslist`
+          `https://my-amazon-14yi.onrender.com/api/users/userslist`
         );
         dispatch({ type: "FETCH_SUCCESS", payload: data });
       } catch (err) {

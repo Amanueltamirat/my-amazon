@@ -1,6 +1,6 @@
 {
   "name": "client-side",
-  "proxy": "http://localhost:3001",
+  "proxy": "https://my-amazon-14yi.onrender.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

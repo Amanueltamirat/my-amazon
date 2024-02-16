@@ -46,7 +46,7 @@ function PlaceOrderScreen() {
     dispatch({ type: "CREATE_REQUEST" });
     try {
       const { data } = await axios.post(
-        "https://mern-app.onrender.com/api/order",
+        "https://my-amazon-14yi.onrender.com/api/order",
         {
           orderItems: cart.cartItems,
           shippingAddress: cart.shippingAddress,
