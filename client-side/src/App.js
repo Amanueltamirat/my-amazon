@@ -8,7 +8,6 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import NavDropdown from "react-bootstrap/NavDropdown";
-
 import { LinkContainer } from "react-router-bootstrap/";
 import Badge from "react-bootstrap/esm/Badge";
 import { useContext, useEffect, useState } from "react";

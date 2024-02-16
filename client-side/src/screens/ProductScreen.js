@@ -6,7 +6,6 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Badge from "react-bootstrap/Badge";
-
 import Rating from "../components/Rating";
 import Button from "react-bootstrap/esm/Button";
 import { Helmet } from "react-helmet-async";
