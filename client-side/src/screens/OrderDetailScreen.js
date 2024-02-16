@@ -10,7 +10,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
-import { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
 import { toast } from "react-toastify";
 //secret-key=EJsWcsy8U6tj29fs4kLcNFDIWe4LC8_T464v_5hBeJ5hHqbRnNsP9Z_RNOFF8rkNtxcHT1PTp9pS8zE6
 
@@ -57,7 +56,7 @@ function OrderDetailScreen() {
 
   const { userInfo } = state;
 
-  const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
+  // const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
   function createOrder(data, actions) {
     return actions.order
       .create({
@@ -146,18 +145,18 @@ function OrderDetailScreen() {
             },
           }
         );
-        paypalDispatch({
-          type: "resetOptions",
-          value: {
-            "client-id": clientId,
-            currency: "USD",
-          },
-        });
-        paypalDispatch({ type: "setLoadingStatus", value: "pending" });
+        // paypalDispatch({
+        //   type: "resetOptions",
+        //   value: {
+        //     "client-id": clientId,
+        //     currency: "USD",
+        //   },
+        // });
+        // paypalDispatch({ type: "setLoadingStatus", value: "pending" });
       };
       loadPayPalScript();
     }
-  }, [userInfo, navigate, order, orderId, paypalDispatch, successPay]);
+  }, [userInfo, navigate, order, orderId, successPay]);
 
   return loading ? (
     <LoadingBox></LoadingBox>
@@ -270,17 +269,18 @@ function OrderDetailScreen() {
                 </ListGroup.Item>
                 {!order.isPaid && (
                   <ListGroup.Item>
-                    {isPending ? (
+                    {/* {isPending ? (
                       <LoadingBox />
                     ) : (
                       <div>
-                        {/* <PayPalButtons
+                        <PayPalButtons
                           createOrder={createOrder}
                           onApprove={onApprove}
                           onError={onError}
-                        ></PayPalButtons> */}
+                        ></PayPalButtons>
                       </div>
-                    )}
+                    )
+                    } */}
                     {LoadingPay && <LoadingBox></LoadingBox>}
                   </ListGroup.Item>
                 )}
